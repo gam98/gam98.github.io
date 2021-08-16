@@ -1,0 +1,180 @@
+:root {
+    /* ## Colors */    
+    /* ### Primary */
+    --dark-Blue-Intro-Email : hsl(217, 28%, 15%);/* (intro and email sign up background) */
+    --dark-Blue-Main-Bg: hsl(218, 28%, 13%);/* (main background) */    
+    --dark-Blue-Footer : hsl(216, 53%, 9%);/* (footer background) */
+    --dark-Blue-Cards-Bg : hsl(219, 30%, 18%);/* (cards background) */
+    /* ### Accent */
+    --cyan : hsl(176, 68%, 64%);/* (inside call-to-action gradient) */
+    --blue : hsl(198, 60%, 50%);/* (inside call-to-action gradient) */
+    --light-Red: hsl(0, 100%, 63%);/* (error) */
+    --white: hsl(0, 0%, 100%); /* ### Neutral */    
+}
+/* ### Headings, Call-to-actions, Header Navigation
+    - Family: [Raleway](https://fonts.google.com/specimen/Raleway)
+    - Weights: 400, 700
+    font-family: 'Raleway', sans-serif;
+    ### Body
+    - Family: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+    - Weights: 400, 700
+    font-family: 'Open Sans', sans-serif;
+*/
+html {
+    scroll-behavior: smooth;
+}
+:target::before {
+    content: '';
+    display: block;
+    height: 5rem;
+    margin-top: -4rem;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--white);
+    background-color: var(--dark-Blue-Main-Bg);
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: var(--white)
+}
+.menu {
+    list-style: none;
+    padding-left: 0;
+    transform: translateX(-150%);
+    transition: .3s transform;
+    position: fixed;
+    padding: .8rem;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: var(--dark-Blue-Main-Bg);
+    border-radius: .3rem;
+}
+.menu--show {
+    transform: translateX(0);
+}
+.menu li {
+    margin-bottom: .5rem;
+}
+.nav-responsive {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    border-bottom: 2px solid var(--dark-Blue-Intro-Email);
+    margin-bottom: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 1.3rem;
+    background-color: var(--dark-Blue-Main-Bg);
+}
+.site-name {
+    font-weight: 700;
+}
+.main {
+    margin-top: 5rem;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+section {
+    border-radius: .3rem;
+    background-color: var(--dark-Blue-Cards-Bg);
+    padding: 1rem 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+section a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: linear-gradient(to right, var(--cyan),var(--blue));
+    padding: .5rem 1rem ;
+    border-radius: .4rem;
+    font-weight: 700;
+    width: 150px;
+}
+@media screen and (min-width: 768px){
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+    section {
+        width: 40%;
+    }
+}
+@media screen and (min-width: 1024px){
+    .main {
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+    section {
+        width: 20%;
+        margin-bottom: initial;
+    }
+    section a {
+        transition: .3s transform;
+    }
+    section a:hover {
+        transform: scale(1.05);
+    }
+    /* Menu */
+    .fas.fa-bars {
+        display: none;
+    }
+    .menu {
+        transform: translateX(0);
+        position: static;
+        background: transparent;
+        width: auto;
+        margin-left: initial;
+        margin-right: inherit;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+    }
+    .nav-responsive {
+        display: block;
+        position: static;
+        margin-bottom: 0;
+        border-bottom: transparent;
+        padding: 0;
+    }
+    .nav {
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--dark-Blue-Intro-Email);
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        background-color: var(--dark-Blue-Main-Bg);
+    }
+    .menu li {
+        margin-bottom: initial;
+    }   
+}
